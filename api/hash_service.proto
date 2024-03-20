@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package hasher;
+
+option go_package = "./pkg/hasher";
+
+service HashingService {
+  rpc CheckHash (HashRequest) returns (HashResponse);
+  rpc GetHash (HashRequest) returns (HashResponse);
+  rpc CreateHash (HashRequest) returns (HashResponse);
+}
+
+message HashRequest {
+  string payload = 1;
+}
+
+message HashResponse {
+  bool exists = 1;
+  string hash = 2;
+  string error = 3;
+}
