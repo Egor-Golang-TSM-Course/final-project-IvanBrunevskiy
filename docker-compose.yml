@@ -2,15 +2,15 @@ version: '3.8'
 services:
   hashing:
     build:
-      context: .
-      dockerfile: cmd/hashing/Dockerfile
+      context: ./hashing
+      dockerfile: cmd/Dockerfile
     ports:
       - "50052:50052"
 
   gateway:
     build:
-      context: .
-      dockerfile: cmd/gateway/Dockerfile
+      context: ./gateway
+      dockerfile: cmd/Dockerfile
     ports:
       - "8080:8080"
     depends_on:

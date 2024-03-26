@@ -22,3 +22,14 @@ Implement a system with two microservices:
 - CreateHash: Creates and stores a hash for a new payload.
 - Communication: The Gateway Service communicates with the Hashing Service using gRPC.
 - Testing: The solution should be thoroughly tested, including unit tests and integration tests to cover the logic and communication between services.
+
+
+Examples
+
+curl -X POST "http://localhost:8080/createhash" \
+     -H "Content-Type: application/json" \
+     -d '{"payload": "hashIvana"}'
+     
+curl "http://localhost:8080/gethash?payload=hashIvana"
+
+curl "http://localhost:8080/checkhash?hash=hashIvana"     

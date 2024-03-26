@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"final_project/pkg/hasher"
+	"gateway/pkg/hasher"
 	"google.golang.org/grpc"
 	"log"
 	http "net/http"

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"final_project/internal/hashing/service"
-	"final_project/internal/hashing/transport"
-	pb "final_project/pkg/hasher"
 	"google.golang.org/grpc"
+	pb "hashing/pkg/hasher"
+	"hashing/service"
+	"hashing/transport"
 	"log"
 	"net"
 )

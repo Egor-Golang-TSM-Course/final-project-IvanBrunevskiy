@@ -2,25 +2,12 @@ package transport
 
 import (
 	"context"
-	"net"
-
-	"final_project/internal/hashing/service"
-	pb "final_project/pkg/hasher"
-	"google.golang.org/grpc"
+	pb "hashing/pkg/hasher"
+	"hashing/service"
 )
 
 func NewGrpcServer(svc *service.HashingService) pb.HashingServiceServer {
 	return &grpcServer{service: svc}
-}
-
-func StartGRPCServer(svc *service.HashingService, port string) error {
-	lis, err := net.Listen("tcp", ":"+port)
-	if err != nil {
-		return err
-	}
-	server := grpc.NewServer()
-	pb.RegisterHashingServiceServer(server, &grpcServer{service: svc})
-	return server.Serve(lis)
 }
 
 type grpcServer struct {

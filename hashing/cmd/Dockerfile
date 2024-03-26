@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o hashing-service ./cmd/hashing
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o hashing-service ./cmd
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
